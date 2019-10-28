@@ -1,4 +1,4 @@
-# Flappy Bird PYGAME
+# Flappy Bird with PYGAME
 
 <b>Developers:</b>
 
