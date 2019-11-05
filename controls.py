@@ -1,6 +1,7 @@
 import sprites
 import pygame
 from pygame import event
+from sounds import *
 
 
 # evento para fechar o jogo
@@ -18,6 +19,7 @@ def play(event, init, play_press, ready):
        init):
         init = False
         ready = True
+        play_sound()
     return init, ready
 
 
