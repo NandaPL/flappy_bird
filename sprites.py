@@ -20,6 +20,8 @@ btn_play = sprite('sprites/btn-play.png')
 
 btn_rank = sprite('sprites/btn-rank.png')
 
+btn_rate = sprite('sprites/btn-rate.png')
+
 get_ready = sprite('sprites/get-ready.png')
 
 tap_instru = sprite('sprites/tap.png')

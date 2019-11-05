@@ -7,12 +7,13 @@ direc = list(range(-8, 9))
 
 
 def initial(screen):
-    global move, pos, direc, play_press, rank_press
+    global move, pos, direc, play_press, rank_press, rate_press
 
     # mostrando pássaro, logo, botões play e rank
     screen.blit(sprites.logo, (80, 120))
     play_press = screen.blit(sprites.btn_play, (40, 410))
     rank_press = screen.blit(sprites.btn_rank, (190, 410))
+    rate_press = screen.blit(sprites.btn_rate, (137, 310))
     screen.blit(sprites.bird[pos], (153, 230+direc[move]))
 
     # movimentação do pássaro
