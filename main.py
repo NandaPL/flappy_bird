@@ -1,52 +1,40 @@
+import sprites
+import start
 import pygame
-from pygame.locals import QUIT
+from pygame import event
 
 pygame.init()
 clock = pygame.time.Clock()
-screen = pygame.display.set_mode((400, 600))
+screen = pygame.display.set_mode((338, 600))
 pygame.display.set_caption('Flappy Bird')
 pygame.display.flip()
 
+# variáveis para a movimentação da base
+ground_x = 0
+shift = sprites.ground.get_width() - sprites.background.get_width()
 
-def sprite(image):
-    load = pygame.image.load(image).convert_alpha()
-    return load
-
-
-logo = sprite('sprites/logo.png')
-
-ground = sprite('sprites/ground.png')
-
-background = sprite('sprites/background.png')
-
-bird = [sprite('sprites/bird-upflap.png'),
-        sprite('sprites/bird-midflap.png'),
-        sprite('sprites/bird-downflap.png'),
-        sprite('sprites/bird-midflap.png')]
-
-pos = move = 0
-direc = list(range(-8, 9))
-
-running = True
+running = intro = True
 while running:
+
+    # mostrando os sprites do fundo
+    screen.blit(sprites.background, (0, 0))
+    screen.blit(sprites.ground, (ground_x, 500))
+
+    # movimentação da base
+    ground_x = -((-ground_x + 4) % shift)
+
+    if intro:
+        start.initiation(screen)
+
     for event in pygame.event.get():
-        if event.type == QUIT:
+        # evento para fechar o jogo
+        if event.type == pygame.QUIT:
             running = False
-
-    screen.blit(background, (0, -100))
-    screen.blit(bird[pos], (180, 250+direc[move]))
-    screen.blit(logo, (60, 100))
-    screen.blit(ground, (0, 520))
-
-    move += 1
-    if move % 5 == 0:
-        pos += 1
-    if pos > 3:
-        pos = 0
-
-    if move > 16:
-        move = 0
-        direc.reverse()
+        # evento para checar se o botão play foi pressionado
+        if (event.type == pygame.MOUSEBUTTONDOWN and
+           event.button == 1 and
+           start.play_press.collidepoint(event.pos)):
+            intro = False
 
     pygame.display.update()
     clock.tick(30)
