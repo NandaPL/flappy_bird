@@ -19,7 +19,7 @@ def play(event, init, play_press, ready):
        init):
         init = False
         ready = True
-        play_sound()
+        play_sound(swooshing)
     return init, ready
 
 
