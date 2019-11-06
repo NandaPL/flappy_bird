@@ -18,15 +18,12 @@ ready = game = False
 i = 0
 upper_y, lower_y = pipes.pipes_y()
 
+# variavel score
+score = 0
+font = pygame.font.SysFont('04B_19', 50)
+
 while run:
     match.bg_loop(screen)
-
-    # posicionamento aleatorio (provisorio)
-    i += 1
-    if i == 100:
-        upper_y, lower_y = pipes.pipes_y()
-        i = 0
-    pipes.draw_pipes(screen, upper_y, lower_y)
 
     # tela inicial
     if init:
@@ -39,6 +36,16 @@ while run:
     # tela principal (partida)
     # if game:
         # função para iniciar o jogo
+    # score
+    score_hud = font.render(str(score), 1, (255, 255, 255))
+    screen.blit(score_hud, (165, 20))
+
+    # posicionamento aleatorio dos canos (provisorio)
+    i += 1
+    if i == 100:
+        upper_y, lower_y = pipes.pipes_y()
+        i = 0
+    pipes.draw_pipes(screen, upper_y, lower_y)
 
     # checagem de eventos
     for event in pygame.event.get():
