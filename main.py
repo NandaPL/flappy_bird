@@ -2,6 +2,7 @@ import controls
 import intro
 import match
 import pygame
+import pipes
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -13,8 +14,19 @@ pygame.display.flip()
 run = init = True
 ready = game = False
 
+# variaveis dos canos
+i = 0
+upper_y, lower_y = pipes.pipes_y()
+
 while run:
     match.bg_loop(screen)
+
+    # posicionamento aleatorio (provisorio)
+    i += 1
+    if i == 100:
+        upper_y, lower_y = pipes.pipes_y()
+        i = 0
+    pipes.draw_pipes(screen, upper_y, lower_y)
 
     # tela inicial
     if init:
