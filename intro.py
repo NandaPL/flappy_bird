@@ -38,3 +38,4 @@ def get_ready(screen):
     screen.blit(sprites.get_ready, (80, 150))
     screen.blit(sprites.tap_instru, (115, 230))
     bird_fly(screen, 90, 230)
+
