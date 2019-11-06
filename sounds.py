@@ -8,9 +8,8 @@ point = 'sounds/point.wav'
 swooshing = 'sounds/swooshing.wav'
 wing = 'sounds/wing.wav'
 
+
 # Função para tocar um som
-
-
 def play_sound(sound):
     pygame.mixer.init()
     effect = pygame.mixer.Sound(sound)
@@ -18,8 +17,6 @@ def play_sound(sound):
 
 
 # Função para tocar uma música até o jogo fechar
-
-
 def play_song(song):
     pygame.mixer.init()
     pygame.mixer.music.load(song)

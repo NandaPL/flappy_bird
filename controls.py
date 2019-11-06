@@ -1,7 +1,6 @@
-import sprites
 import pygame
 from pygame import event
-from sounds import *
+from sounds import swooshing, play_sound
 
 
 # evento para fechar o jogo
@@ -23,7 +22,7 @@ def play(event, init, play_press, ready):
     return init, ready
 
 
-def instruction(event, ready, init, game):
+def ready_to_play(event, ready, init, game):
     if (ready and event.type == pygame.KEYDOWN and
        event.key == pygame.K_SPACE):
         ready = False
