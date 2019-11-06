@@ -1,6 +1,6 @@
 import pygame
 from pygame import event
-from sounds import swooshing, play_sound
+from sounds import swooshing, wing, play_sound
 
 
 # evento para fechar o jogo
@@ -28,3 +28,11 @@ def ready_to_play(event, ready, init, game):
         ready = False
         game = True
     return ready, game
+
+
+def bird_player(event, game, flapped):
+    if (game and event.type == pygame.KEYDOWN and
+       event.key == pygame.K_SPACE):
+        flapped = True
+        play_sound(wing)
+    return flapped

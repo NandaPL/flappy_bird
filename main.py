@@ -33,6 +33,7 @@ while run:
         run = controls.close(event, run)
         init, ready = controls.play(event, init, intro.play_press, ready)
         ready, game = controls.ready_to_play(event, ready, init, game)
+        match.flapped = controls.bird_player(event, game, match.flapped)
 
     pygame.display.update()
     clock.tick(30)
