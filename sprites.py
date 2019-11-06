@@ -37,4 +37,4 @@ bird = [sprite('sprites/bird-upflap.png'),
 
 pipe_down = sprite('sprites/pipe-down.png')
 
-pipe_up = sprite('sprites/pipe-up.png')
+pipe_up = sprite('sprites/pipe-upq.png')

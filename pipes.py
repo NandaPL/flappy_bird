@@ -2,18 +2,6 @@ import pygame
 import sprites
 import random
 
-# canos mais baixos
-# screen.blit(sprites.pipe_down, (278, 0))
-# screen.blit(sprites.pipe_up, (278, 470))
-
-# intermediario
-# screen.blit(sprites.pipe_down, (278, -100))
-# screen.blit(sprites.pipe_up, (278, 370))
-
-# canos mais altos
-# screen.blit(sprites.pipe_down, (278, -280))
-# screen.blit(sprites.pipe_up, (278, 190))
-
 
 def pipes_y():
     pipe_gap = 470
