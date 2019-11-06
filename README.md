@@ -16,3 +16,6 @@ Sprites:
 
 Sound FX:
 - https://www.sounds-resource.com/mobile/flappybird/sound/5309/
+
+Font:
+- https://www.dafont.com/04b-19.font?text=O
